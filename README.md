@@ -1,2 +1,2 @@
-# m_backup
+# BackupToUSB
 A basic backup script to a USB for Windows
