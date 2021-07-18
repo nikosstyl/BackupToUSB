@@ -34,7 +34,7 @@ def backup() :
 		os.rename(outdir, outdir[0:6]+'(1).zip')
 		os.remove(outdir[0:6]+'(1).zip')
 
-	shutil.move(tempdir+'.zip', 'D:/') # This has to be fixed
+	shutil.move(tempdir+'.zip', outdir.replace(filename, '')) # Replace filename with your actual output filename. E.g., filename='MyZip.zip'
 	return (True);
 
 
