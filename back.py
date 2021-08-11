@@ -21,7 +21,7 @@ def backup() :
 	default.location file (in our case, the filename is folder.zip).
 	"""
 	print('Welcome to UTh backup!\n');
-	indir = 'C:/Users/Nikos Stylianou/OneDrive - ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΕΣΣΑΛΙΑΣ/UTh'
+	indir = # Directory to be zipped
 	loc = open('default.location', 'r');
 	loc.seek(0, 0);
 	# outdir format has to be like this: D:/path/to/Test.zip
@@ -31,18 +31,15 @@ def backup() :
 	if os.path.isfile(outdir) == False:
 		# print('Insert USB!')
 		print('\nUSB NOT found!');
-		deb = open('C:/Users/Nikos Stylianou/.backhelp/debug.txt', 'w');
+		deb = open('debug.txt', 'w');
 		deb.write('%s' %datetime.now());
 		deb.write('\nUSB NOT FOUND!\n');
-		# deb.write('Close Notepad and go to python console for instructions!');
 		deb.close();
-		# os.system("notepad \"C:/Users/Nikos Stylianou/.backhelp/debug.txt\"")
 		print('Default output location: ', end='');
 		print('%s'%outdir);
 		print('Specify output .zip file (or leave blank for default): ', end='')
 		new = input();
 		mflag = True;
-		# print(new);
 		if new:
 			nn = open('default.location', 'w');
 			nn.seek(0,0);
@@ -52,7 +49,7 @@ def backup() :
 
 	print('USB found!');
 	print('-------------- Info --------------')
-	tempdir = 'C:/Users/Nikos Stylianou/.backhelp/UTh'
+	tempdir = # A basic temporary directory. If on Linux, mktemp -d should work.
 	root_directory = Path(indir)
 	totsize = sum(f.stat().st_size for f in root_directory.glob('**/*') if f.is_file())/1e+9
 	print ('\tZipping folder in temporary location')
