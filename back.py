@@ -102,9 +102,10 @@ def finfo(f, totsize):
 
 if __name__ ==  '__main__':
 	while 1:
-		if platform.system() == 'Windows':
+		check = platform.system()
+		if check == 'Windows':
 			os.system('cls'); # Supposing running from cmd
-		elif platform.system() == 'Linux':
+		elif check == 'Linux':
 			os.system('clear');
 		temp = backup();
 		if temp == True:
